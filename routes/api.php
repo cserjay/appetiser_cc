@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('getsettings', 'SettingsController@getSettings');
+Route::get('getsetting/{id}', 'SettingsController@getSettingsById');
+
+// Save event
+Route::post('savesettings', 'SettingsController@saveSettings');
+Route::put('updatesettings/{id}', 'SettingsController@updateSettings');
